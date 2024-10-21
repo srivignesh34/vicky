@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login and Sign Up</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login Page</title>
     <style>
         * {
             margin: 0;
@@ -13,154 +14,92 @@
 
         body {
             font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: #f2f2f2;
         }
 
-        .container {
-            background-color: white;
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            width: 400px;
-        }
-
-        .tabs {
-            display: flex;
-            justify-content: space-around;
-            margin-bottom: 20px;
-        }
-
-        .tab {
-            font-size: 18px;
-            padding: 10px;
-            cursor: pointer;
-            transition: 0.3s;
-            color: #888;
-        }
-
-        .tab:hover {
-            color: #333;
-        }
-
-        input[type="radio"] {
-            display: none;
-        }
-
-        input[type="radio"]:checked + .tab {
-            color: #000;
-            border-bottom: 2px solid #007bff;
-        }
-
-        .form-content {
-            position: relative;
-        }
-
-        form {
-            display: none;
-        }
-
-        #login-tab:checked ~ .form-content #login-form,
-        #signup-tab:checked ~ .form-content #signup-form {
-            display: block;
-        }
-
-        form h2 {
-            margin-bottom: 20px;
+        .login-container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
             text-align: center;
-            color: #333;
+        }
+
+        h2 {
+            margin-bottom: 20px;
         }
 
         .input-box {
             margin-bottom: 15px;
         }
 
-        .input-box input {
+        .input-box label {
+            display: block;
+            margin-bottom: 5px;
+            text-align: left;
+        }
+
+        .input-box input[type="text"],
+        .input-box input[type="password"] {
             width: 100%;
-            padding: 12px;
+            padding: 10px;
             border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 16px;
+            border-radius: 4px;
+            font-size: 14px;
         }
 
-        .btn {
+        .input-box input[type="submit"] {
             width: 100%;
-            padding: 12px;
-            background-color: #007bff;
-            border: none;
+            padding: 10px;
+            background-color: #28a745;
             color: white;
-            font-size: 16px;
-            border-radius: 5px;
+            border: none;
+            border-radius: 4px;
             cursor: pointer;
+            font-size: 16px;
         }
 
-        .btn:hover {
-            background-color: #0056b3;
+        .input-box input[type="submit"]:hover {
+            background-color: #218838;
         }
 
-        .form-footer {
-            margin-top: 15px;
-            text-align: center;
-            color: #888;
+        .signup {
+            margin-top: 10px;
+            font-size: 14px;
         }
 
-        .form-footer a {
+        .signup a {
             color: #007bff;
             text-decoration: none;
         }
 
-        .form-footer a:hover {
+        .signup a:hover {
             text-decoration: underline;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <input type="radio" id="login-tab" name="tab" checked>
-        <input type="radio" id="signup-tab" name="tab">
-        
-        <div class="tabs">
-            <label for="login-tab" class="tab">Login</label>
-            <label for="signup-tab" class="tab">Sign Up</label>
-        </div>
-
-        <div class="form-content">
-            <!-- Login Form -->
-            <form id="login-form">
-                <h2>Login</h2>
-                <div class="input-box">
-                    <input type="text" placeholder="Username" required>
-                </div>
-                <div class="input-box">
-                    <input type="password" placeholder="Password" required>
-                </div>
-                <button type="submit" class="btn">Login</button>
-                <div class="form-footer">
-                    <p>Don't have an account? <a href="#">Sign Up</a></p>
-                </div>
-            </form>
-
-            <!-- Sign Up Form -->
-            <form id="signup-form">
-                <h2>Sign Up</h2>
-                <div class="input-box">
-                    <input type="text" placeholder="Username" required>
-                </div>
-                <div class="input-box">
-                    <input type="email" placeholder="Email" required>
-                </div>
-                <div class="input-box">
-                    <input type="password" placeholder="Password" required>
-                </div>
-                <button type="submit" class="btn">Sign Up</button>
-                <div class="form-footer">
-                    <p>Already have an account? <a href="#">Login</a></p>
-                </div>
-            </form>
-        </div>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form action="#" method="POST">
+            <div class="input-box">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="input-box">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="input-box">
+                <input type="submit" value="Login">
+            </div>
+            <p class="signup">Don't have an account? <a href="#">Sign up here</a></p>
+        </form>
     </div>
 </body>
 </html>
