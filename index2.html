@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login and Sign Up</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f2f2f2;
+        }
+
+        .container {
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 400px;
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+
+        .tab {
+            font-size: 18px;
+            padding: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+            color: #888;
+        }
+
+        .tab:hover {
+            color: #333;
+        }
+
+        input[type="radio"] {
+            display: none;
+        }
+
+        input[type="radio"]:checked + .tab {
+            color: #000;
+            border-bottom: 2px solid #007bff;
+        }
+
+        .form-content {
+            position: relative;
+        }
+
+        form {
+            display: none;
+        }
+
+        #login-tab:checked ~ .form-content #login-form,
+        #signup-tab:checked ~ .form-content #signup-form {
+            display: block;
+        }
+
+        form h2 {
+            margin-bottom: 20px;
+            text-align: center;
+            color: #333;
+        }
+
+        .input-box {
+            margin-bottom: 15px;
+        }
+
+        .input-box input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 12px;
+            background-color: #007bff;
+            border: none;
+            color: white;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+
+        .form-footer {
+            margin-top: 15px;
+            text-align: center;
+            color: #888;
+        }
+
+        .form-footer a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .form-footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <input type="radio" id="login-tab" name="tab" checked>
+        <input type="radio" id="signup-tab" name="tab">
+        
+        <div class="tabs">
+            <label for="login-tab" class="tab">Login</label>
+            <label for="signup-tab" class="tab">Sign Up</label>
+        </div>
+
+        <div class="form-content">
+            <!-- Login Form -->
+            <form id="login-form">
+                <h2>Login</h2>
+                <div class="input-box">
+                    <input type="text" placeholder="Username" required>
+                </div>
+                <div class="input-box">
+                    <input type="password" placeholder="Password" required>
+                </div>
+                <button type="submit" class="btn">Login</button>
+                <div class="form-footer">
+                    <p>Don't have an account? <a href="#">Sign Up</a></p>
+                </div>
+            </form>
+
+            <!-- Sign Up Form -->
+            <form id="signup-form">
+                <h2>Sign Up</h2>
+                <div class="input-box">
+                    <input type="text" placeholder="Username" required>
+                </div>
+                <div class="input-box">
+                    <input type="email" placeholder="Email" required>
+                </div>
+                <div class="input-box">
+                    <input type="password" placeholder="Password" required>
+                </div>
+                <button type="submit" class="btn">Sign Up</button>
+                <div class="form-footer">
+                    <p>Already have an account? <a href="#">Login</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
